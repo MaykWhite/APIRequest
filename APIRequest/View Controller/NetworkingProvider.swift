@@ -61,11 +61,11 @@ class NetworkingProvider: UITableViewController {
             let touchPoint = sender.location(in: tableView)
             if let indexPath = tableView.indexPathForRow(at: touchPoint) {
                 let menuDeleteEdit = UIAlertController(title: "Delete", message: "Dou you want delete this item?", preferredStyle: .alert)
-                menuDeleteEdit.addAction(UIAlertAction(title: "No", style: .destructive))
                 menuDeleteEdit.addAction(UIAlertAction(title: "Yes", style: .default, handler: {_ in
                     self.deleteUser(id: idToDelete) {
                     } failure: { (error) in }
                     print("Delete succes!")}))
+                menuDeleteEdit.addAction(UIAlertAction(title: "No", style: .destructive))
                 present(menuDeleteEdit, animated: true, completion: nil)
                 print(indexPath)
             }
